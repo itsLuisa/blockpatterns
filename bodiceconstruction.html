@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Block Bodice</title>
+</head>
+<body>
+
+<h1>Block Bodice</h1>
+<!-- <p>under construction</p> -->
+<svg id="bodiceblock" width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+    <!-- Step 1: The Frame -->
+    <rect id="frame" width="0" height="0" x="0" y="0" style="fill:none;stroke:black;stroke-width:1;stroke-dasharray:none" />
+    <line id="verticaldivideintofrontandback" x1="0" y1="0" x2="0" y2="0" style="stroke:black;stroke-width:1" />
+
+    <!-- Step 2: Depth of armhole -->
+    <line id="depthofarmholes" x1="0" y1="0" x2="0" y2="0" style="stroke:black;stroke-width:1" />
+
+    <!-- Step 3: Neck opening -->
+    <circle id="SNPfront" cx="0" cy="0" r="2" />
+    <path id="frontneckline" d="M 0 0 Q 0 0 0 0" stroke="black" stroke-width="1" fill="none" />
+
+    <circle id="SNPback" cx="0" cy="0" r="2" />
+    <path id="backneckline" d="M 0 0 Q 0 0 0 0" stroke="black" stroke-width="1" fill="none" />
+
+    <!-- Step 4: Bust point -->
+    <circle id="BP" cx="0" cy="0" r="2"/>
+
+    <!-- Step 5: Shoulder point -->
+    <circle id="SPfront" cx="0" cy="0" r="2" />
+    <circle id="SPback" cx="0" cy="0" r="2" />
+
+    <line id="frontshoulderslant" x1="0" y1="0" x2="0" y2="0" style="stroke:grey;stroke-width:1" />
+    <line id="backshoulderslant" x1="0" y1="0" x2="0" y2="0" style="stroke:grey;stroke-width:1" />
+
+    <!-- Step 6: Back shoulder dart -->
+    <circle id="backshoulderleftdartpoint" cx="0" cy="0" r="2" />
+    <circle id="backshoulderrightdartpoint" cx="0" cy="0" r="2" />
+    <circle id="backshouldermiddledartpoint" cx="0" cy="0" r="2" />
+    <circle id="backshoulderdartpoint" cx= "0" cy = "0" r="2"/>
+    <path id="backshoulderseamwithdart" d="M 0 0 L 0 0 L 0 0 L 0 0 L 0 0"/>
+
+    <!-- Step 7: Front shoulder dart -->
+    <circle id="frontshoulderleftdartpoint" cx="0" cy="0" r="2" />
+    <circle id="frontshoulderrightdartpoint" cx="0" cy="0" r="2" />
+    <circle id="frontshouldermiddledartpoint" cx="0" cy="0" r="2" />
+</svg> 
+
+<p>Bust measurement:</p>
+<input type="text" id="bustmeasurement" placeholder="Bust measurement in mm">
+
+<p>Back body length:</p>
+<input type="text" id="backbodylength" placeholder="Back body length in mm">
+
+<p>Construct bodice:</p>
+<button onclick="constructCustomMeasurements()">Construct</button>
+<button onclick="constructStandardMeasurements()">Reset to standard measurements</button>
+<button onclick="downloadSVG('bodiceblock', 'bodiceblock.svg')">Download SVG-file</button>
+<!-- <button onclick="downloadSVGAsPDF('bodiceblock', 'bodiceblock.pdf')">Download PDF-file</button> -->
+ 
+</body>
+<!-- imports funktionieren nicht richtig -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<!-- Include pdf-lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<!-- Include svg2pdf.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/svg2pdf.js/2.0.0/svg2pdf.min.js"></script>
+<script src="blockconstruction.js"></script>
+</html>
